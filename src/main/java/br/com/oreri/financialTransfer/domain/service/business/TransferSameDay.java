@@ -17,7 +17,7 @@ public class TransferSameDay extends  TransferHandler{
 
     @Override
     public void calcuteTax(Transfer aTransfer) {
-        if (dateDiference(aTransfer) == SAME_DAY){
+        if (calculateDateDifference(aTransfer) == SAME_DAY){
             //IRÁ SOMAR A PORCENTAGEM CALCULADA DO VALOR TRANSFERIDO COM O VALOR DA TAXA SOLICITADO
            aTransfer.setTax(
             ((BigDecimal.valueOf(aTransfer.getTransferAmount())

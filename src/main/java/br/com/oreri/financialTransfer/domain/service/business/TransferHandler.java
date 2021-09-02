@@ -14,7 +14,7 @@ public abstract class TransferHandler {
 
     public abstract void calcuteTax(Transfer aTransfer);
 
-    protected int dateDiference(Transfer aTransfer){
+    protected int calculateDateDifference(Transfer aTransfer){
         return Long.valueOf(
                 (aTransfer.getTransferDate().getTime()-aTransfer.getDate().getTime()) / MILLESSECONDS_DAY)
             .intValue();
@@ -22,7 +22,7 @@ public abstract class TransferHandler {
 
     protected TransferHandler getNext() {
         if (next == null){
-            throw new IllegalArgumentException("Can not calculate the tax by this disared day");
+            throw new IllegalArgumentException("Can not calculate the tax by this desired day");
         }
         return next;
     }
