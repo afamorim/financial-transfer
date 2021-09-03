@@ -1,31 +1,27 @@
-package br.com.oreri.financialTransfer.domain.entity;
+package br.com.oreri.financialTransfer.application.representation;
 
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.validation.constraints.Future;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-@Builder
-@AllArgsConstructor
 @Getter
-public class Transfer {
+@Builder
+@Setter
+public class TransferRepresentation {
 
-    @NotBlank
     private String  originAccount;
-    @NotBlank
     private String  destinationAccount;
-    @NotNull
     private Double  transferAmount;
-    @Setter
     private Double  tax;
-    @FutureOrPresent
-    private Date    transferDate;
-    @Setter
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date transferDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date    date;
 }

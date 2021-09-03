@@ -1,21 +1,21 @@
-package br.com.oreri.financialTransfer.domain.service.business;
+package br.com.oreri.financialTransfer.domain.service.handler;
 
 import br.com.oreri.financialTransfer.domain.entity.Transfer;
 
 import java.math.BigDecimal;
 
-public class TransferMoreThanThirtyLessThanFortyDays extends TransferHandler{
+public class TransferMoreThanTenLessThanTwentyDays extends TransferHandler{
 
-    private Double PERCENT_AMOUNT = 4.0;
+    private Double PERCENT_AMOUNT = 8.0;
 
-    public TransferMoreThanThirtyLessThanFortyDays(TransferHandler aNext) {
+    public TransferMoreThanTenLessThanTwentyDays(TransferHandler aNext) {
         super(aNext);
     }
 
     @Override
     public void calcuteTax(Transfer aTransfer) {
         int dateDifference = calculateDateDifference(aTransfer);
-        if (dateDifference > 30 && dateDifference <= 40) {
+        if (dateDifference > 10 && dateDifference <= 20) {
             aTransfer.setTax(
                     ((BigDecimal.valueOf(aTransfer.getTransferAmount())
                             .multiply(BigDecimal.valueOf(PERCENT_AMOUNT)))

@@ -1,4 +1,4 @@
-package br.com.oreri.financialTransfer.domain.service.business;
+package br.com.oreri.financialTransfer.domain.service.handler;
 
 import br.com.oreri.financialTransfer.domain.entity.Transfer;
 

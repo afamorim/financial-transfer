@@ -1,4 +1,4 @@
-package br.com.oreri.financialTransfer.domain.service.business;
+package br.com.oreri.financialTransfer.domain.service.handler;
 
 import br.com.oreri.financialTransfer.domain.entity.Transfer;
 import org.junit.jupiter.api.Assertions;
@@ -30,7 +30,7 @@ public class TransferHandlerTest {
 
     @BeforeAll
     public void basicInstatiation() throws ParseException{
-        SimpleDateFormat spf = new SimpleDateFormat("yyyy-mm-dd");
+        SimpleDateFormat spf = new SimpleDateFormat("yyyy-MM-dd");
         transferHandler = new TransferSameDay(null);
         Calendar initialDateCalendar = Calendar.getInstance();
         initialDateCalendar.setTime(spf.parse("2021-08-31"));

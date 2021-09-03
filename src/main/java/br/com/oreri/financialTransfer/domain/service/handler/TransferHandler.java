@@ -1,4 +1,4 @@
-package br.com.oreri.financialTransfer.domain.service.business;
+package br.com.oreri.financialTransfer.domain.service.handler;
 
 import br.com.oreri.financialTransfer.domain.entity.Transfer;
 
@@ -9,9 +9,10 @@ public abstract class TransferHandler {
     private Long MILLESSECONDS_DAY = 86400000L;
 
     public TransferHandler(TransferHandler aNext){
-        this.next = next;
+        this.next = aNext;
     }
 
+    //Will be implemented in all concrete classes to build a Chain off responsability
     public abstract void calcuteTax(Transfer aTransfer);
 
     protected int calculateDateDifference(Transfer aTransfer){
